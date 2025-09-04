@@ -1,3 +1,9 @@
+# Fault Detection in Industrial Process using TEP Dataset 
+
+## Overview
+
+This project implements an anomaly detection framework on the **Tennessee Eastman Process (TEP) dataset**, a benchmark for process monitoring and fault diagnosis. Using an ensemble of **Linear regression models** built in Python, the approach reconstructs process variables under normal operating conditions and quantifies deviations through reconstruction loss to detect faults. The workflow integrates data preprocessing, ensemble modeling, anomaly detection, and visualization, demonstrating a robust and interpretable method for identifying abnormal process behavior in complex chemical systems.
+
 ## Dataset Description  
 
 The project uses the **Tennessee Eastman Process (TEP) Simulation Dataset**, a widely adopted benchmark for fault detection and process monitoring.  
@@ -67,4 +73,20 @@ The project uses the **Tennessee Eastman Process (TEP) Simulation Dataset**, a w
 - Exported computed metrics (e.g., reconstruction error, R² scores, process variable deviations) for further analysis.  
 - Highlighted the correlation between increasing reconstruction error and onset of faults, demonstrating the method’s robustness for anomaly detection.  
 
+## Suggested Graphs  
 
+To support analysis and interpretation, the following plots were generated:  
+
+1. **Reconstructed vs. Actual Signals** – comparison for selected process variables.  
+2. **Reconstruction Loss Over Time** – fault-free vs. faulty datasets, highlighting anomaly onset.  
+3. **Distribution of Reconstruction Errors** – across fault numbers (1–20).  
+4. **Performance Metrics** – R² scores for reconstruction accuracy across ensemble models.  
+
+---
+
+## Results  
+
+- Ensemble regression models successfully reconstructed fault-free process data with high fidelity.  
+- Reconstruction loss remained consistently low under normal operating conditions but increased sharply when faults were introduced.  
+- The anomaly detection framework was able to separate fault-free and faulty runs across multiple fault types, validating its robustness.  
+- Time-series evaluation of selected process variables showed strong agreement between reconstructed and actual values in the absence of faults.  
