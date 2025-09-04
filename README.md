@@ -4,6 +4,10 @@
 
 This project implements an anomaly detection framework on the **Tennessee Eastman Process (TEP) dataset**, a benchmark for process monitoring and fault diagnosis. Using an ensemble of **Linear regression models** built in Python, the approach reconstructs process variables under normal operating conditions and quantifies deviations through reconstruction loss to detect faults. The workflow integrates data preprocessing, ensemble modeling, anomaly detection, and visualization, demonstrating a robust and interpretable method for identifying abnormal process behavior in complex chemical systems.
 
+## Accessing the Dataset  
+The dataset can be accessed from Kaggle:  
+[Tennessee Eastman Process Simulation Dataset (Kaggle)](https://www.kaggle.com/datasets/averkij/tennessee-eastman-process-simulation-dataset?resource=download&select=TEP_FaultFree_Testing.RData)  
+
 ## Dataset Description  
 
 The project uses the **Tennessee Eastman Process (TEP) Simulation Dataset**, a widely adopted benchmark for fault detection and process monitoring.  
