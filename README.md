@@ -66,7 +66,6 @@ The project uses the **Tennessee Eastman Process (TEP) Simulation Dataset**, a w
 - Used reconstruction error as the anomaly detection criterion, with clear separation between normal and fault conditions.  
 - Quantified anomalies across multiple fault types (fault numbers 1–20) to demonstrate generalizability of the approach.  
 
----
 
 ## Visualization and Analysis  
 
@@ -76,17 +75,6 @@ The project uses the **Tennessee Eastman Process (TEP) Simulation Dataset**, a w
 - Visualized ensemble model performance across different fault numbers.  
 - Exported computed metrics (e.g., reconstruction error, R² scores, process variable deviations) for further analysis.  
 - Highlighted the correlation between increasing reconstruction error and onset of faults, demonstrating the method’s robustness for anomaly detection.  
-
-## Suggested Graphs  
-
-To support analysis and interpretation, the following plots were generated:  
-
-1. **Reconstructed vs. Actual Signals** – comparison for selected process variables.  
-2. **Reconstruction Loss Over Time** – fault-free vs. faulty datasets, highlighting anomaly onset.  
-3. **Distribution of Reconstruction Errors** – across fault numbers (1–20).  
-4. **Performance Metrics** – R² scores for reconstruction accuracy across ensemble models.  
-
----
 
 ## Results  
 
