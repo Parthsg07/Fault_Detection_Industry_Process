@@ -26,6 +26,45 @@ The project uses the **Tennessee Eastman Process (TEP) Simulation Dataset**, a w
   - **Columns 4–55: Process Variables**  
     - 52 process variables (measurements and manipulated variables).  
     - Retain original TEP variable names.  
+## Preprocessing  
 
-This structure provides both **fault-free baselines** and **fault-injected datasets**, enabling effective benchmarking of anomaly detection methods.
+- Loaded the Tennessee Eastman Process `.RData` files using the `pyreadr` library.  
+- Combined **fault-free** and **faulty** datasets for unified processing.  
+- Standardized all process variables (columns 4–55) using `StandardScaler` from scikit-learn to ensure zero-mean and unit variance.  
+- Created separate subsets for:  
+  - Fault-free data (baseline for reconstruction).  
+  - Faulty data (evaluation of anomaly detection).  
+
+## Modeling Approach  
+
+- Implemented an **ensemble of Linear regression models** to reconstruct process variables:  
+  - `LinearRegression`  
+  - `HistGradientBoostingRegressor`  
+- For each variable, trained multiple regressors to predict it using the remaining variables as features.  
+- Combined predictions from the ensemble to reconstruct the full multivariate time-series.  
+- Designed a modular workflow with functions for:  
+  - Training and storing ensemble models.  
+  - Reconstructing variables from ensemble predictions.  
+  - Exporting results for downstream analysis.  
+
+## Anomaly Detection  
+
+- Defined **reconstruction loss** as the deviation between reconstructed signals and actual process data.  
+- Evaluated reconstruction error for:  
+  - **Fault-free data** → low reconstruction loss.  
+  - **Faulty data** → significantly higher loss.  
+- Used reconstruction error as the anomaly detection criterion, with clear separation between normal and fault conditions.  
+- Quantified anomalies across multiple fault types (fault numbers 1–20) to demonstrate generalizability of the approach.  
+
+---
+
+## Visualization and Analysis  
+
+- Generated **time-series plots** of:  
+  - Actual vs. reconstructed variables (to evaluate accuracy).  
+  - Reconstruction loss for fault-free and faulty conditions.  
+- Visualized ensemble model performance across different fault numbers.  
+- Exported computed metrics (e.g., reconstruction error, R² scores, process variable deviations) for further analysis.  
+- Highlighted the correlation between increasing reconstruction error and onset of faults, demonstrating the method’s robustness for anomaly detection.  
+
 
